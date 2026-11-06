@@ -1,25 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <div class="navbar">
-            <a href="#">HOME</a>
-            <a href="#">OVERCOMING</a>
-            <a href="#">SUPPORT</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bullying in South Auckland</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+
+        
+
+            <div class="navbar">
+                <h2 class="logo">Bullying in South Auckland</h2>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="overcoming.html">Overcoming</a></li>
+                    <li><a href="support.html">Support</a></li>
+                  
+                </ul> 
+                   
+                <div class="search">
+                     <input
+                     type="text"
+                     id="searchInput"
+                     class="srch"
+                     placeholder="Search topics..."
+                >
+                <button type="button" class="btn" id="searchButton">
+                    Search
+                           
+                </button>       
+            </div> 
         </div>
-        <div class="banner">Heading</div>
-        <div class="img_1">Image 1</div>
-        <div class="text_1">Text 1</div>
-        <div class="img_2">Image 2</div>
-        <div class="text_2">Text 2</div>
-        <div class="img_3">Image 3</div>
-        <div class="text_3">Text 3</div>
-        <div class="footer">Footer</div>
-    </div>
-</body>
-</html>
+                    
+
+            <div class="heading" id="Home">
+                <div class="content">
+                    <h1>
+                        Bullying in<br>
+                        <span>South Auckland</span>
+                    </h1>
+                    <p>Bullying can affect people at school,at home, online and in the community.Learn about bullying, how to overcome it, and where to find support.
+                    </p>
+
+
+                        <a href="overcoming.html">Learn More</a>
+
+                </div>
+            </div>
+                
+            <div class="banner"> 
+                <h2>Bullying In South Auckland needs to stop</h2> 
+                <p>Everyone deserves to feel safe, respected and supported.</p>
+            </div>
+
+            <div class="img_1">
+                <img src="images/pexels-rdne-6936467.jpg" alt="A writing on a whiteboard which states, 'Dont be a bullying, be a friend">
+            </div>
+
+            <div class="text_1" id="what-is-bullying">
+                <h2>What is Bullying?</h2>
+
+                    <p>Bullying is when someone repeatedly hurts, threatens, or may leave another person on purpose. Bullying can be described as many factors such as physical, verbal, social, or online.</p> 
+                                
+                    <p> Through South Auckland, bullying may occur in schools, in neighbourhoods, or even on social internet. One example can be of a person who is bullied because of thier culture, appearence, family, or the way they pronounce words. Bullying can make people feel emotions like sadness, lonely, scared, or unsafe. Its very important that students and others to speak up through people or websites that might offer help.
+                    </p> 
+            </div>
+
+            <div class="img_2"> 
+                <img src="images/pexels-mikhail-nilov-7929430.jpg" alt="A class peer conforting another class mate, that was bullied'">
+            </div> 
+
+
+            <div class="text_2" id="effects"> 
+                <h2>What are the effects of bullying?</h2>
+                        <p> Bullying can have serious, long-lasting effects, causing fear, anxiety, depression, low self-esteem, and even suicidal thoughts. It can harm school performance, relationships, and future opportunities. </p> 
+                        
+                        <p> Talking to someone you trust can make a big difference. This could be a parent, teacher, school counsellor, family member or another trusted adult. </p>
+            </div>
+                        
+            <div class="img_3">
+                <img src="images/twogirls.jpg" alt="two girls holding a poster that says 'Speak Up Stand Together Stop BUllying'">
+            </div>                    
+                          
+            <div class="text_3" id="support"> 
+                <h2>Getting Support</h2>
+                        <p> Nobody should have to deal with bullying alone. Reaching out for support is an important step.</p> 
+                        <p> If you see someone being bullied,you can support them by listening, including them and telling a trusted adult when help is needed. </p>
+            </div> 
+                        
+
+            <div class="footer">
+                <p> &copy; 2026 Bullying in South Auckland,
+                    By Alai Vaiangina
+                </p>
+                                  
+            </div>
+        
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+
+    const topics = [
+        {
+            keywords: ["What is Bullying", "Bullying definition",  ],
+            id: "what-is-bullying"
+        },
+        {
+            keywords: ["effects", "anxiety", "mental health", "sadness"],
+            id: "effects"
+        },
+        {
+            keywords: ["support", "help", "trusted adult"],
+            id: "support"
+        }
+    ];
+
+    function searchWebsite() {
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (!query) {
+            alert("Please type a topic first.");
+            return;
+        }
+
+        const match = topics.find(topic =>
+            topic.keywords.some(keyword =>
+                keyword.includes(query) || query.includes(keyword)
+            )
+        );
+
+        if (match) {
+            const section = document.getElementById(match.id);
+
+            if (section) {
+                section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            } else {
+                alert("Section not found. Check your HTML IDs.");
+            }
+        } else {
+            alert("No matching topic. Try bullying, effects, or support.");
+        }
+    }
+
+    searchButton.addEventListener("click", searchWebsite);
+
+    searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            searchWebsite();
+        }
+    });
+});
+</script>
+
+        </div>
+
+    </body> 
+    </html>
+
+
+
+
+
+            
+        
