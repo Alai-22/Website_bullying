@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bullying in South Auckland</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+
+        <div class="navbar">
+                <h2 class="logo">Overcoming</h2>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="overcoming.html">Overcoming</a></li>
+                    <li><a href="support.html">Support</a></li>
+                  
+                </ul> 
+                   
+                <div class="search">
+                     <input
+                     type="text"
+                     id="searchInput"
+                     class="srch"
+                     placeholder="Search topics..."
+                >
+                <button type="button" class="btn" id="searchButton">
+                    Search
+                           
+                </button>       
+            </div> 
+        </div>
+                    
+
+            <div class="heading" id="Home">
+                <div class="content">
+                   
+                    
+                        <a href="support.html">Learn more</a>
+                  
+                </div>
+            </div>
+                  
+            <div class="banner"> 
+                <h2>Bullying In South Auckland needs to stop</h2> 
+                <p>Everyone deserves to feel safe, respected and supported.</p>
+            </div>
+
+            <div class="img_1">
+            <img src="images/Screenshot-2026-10-16-093157.png" alt= "A student holding another peer by the collar ">
+            </div>
+
+            <div class="text_1" id="bullying-affects-a-person">
+                <h2>How can bullying affect a person's confidence and mental well being?</h2>
+
+                    <p>Bullying can have a serious effect on any person's confidence and can include their mental well being as well. Bullying may also make a person feel worthless, not secure with the public, lonely, and could be afraid to be themselves. This can begin doubt to their abilities, appearence, and value, by this its because of the hurtful words or actions of others. However, bullying can also cause high key stress, anxiety, sadness, and the Hardship to place trust in others. Through time, experiences like theses may affect friendships, schoolwork, and daily life. But this can all change with support from trusting people who provide these factors such as, self-care, and encouragement, a person can rebuild their confidence, which can let them recognise their worth and then beginning to heal. </p> 
+                                
+                    
+            </div>
+
+            <div class="img_2"> 
+            <img src="images/Screenshot-2026-10-16 093676.png" alt="A bully bullying a another peer">
+            </div> 
+
+
+            <div class="text_2" id="instuctions-when-bullied"> 
+                <h2>What should you do if someone is bullying you</h2>
+                        <p>If you are being bullied by someone, remember that you don't need to be treated that way, and that its never your fault. Try to remain calm and, if it feels safe, have courage to tell them to stop. Avoid fighting back, as this can make the situation more worse. So tell someone you'll trust, such as for example a parent, teacher, or a school counsellor as they can provide help. If the bullying still happening but online, save the evidence by taking a screenshot, then block the person, and report their behaviour to the school. Most importantly, be able to surround yourself with supportive peers that can make you feel save and valued. </p> 
+            </div>
+                        
+            <div class="img_3">
+                <img src="images/twogirls.jpg" alt="two girls holding a poster that says 'Speak Up Stand Together Stop BUllying'">
+            </div>                    
+                          
+            <div class="text_3" id="support"> 
+                <h2>How can someone build their confidence after being bullied?</h2>
+                        <p>Anyone can rebuild their confidence after being bullied by have to remember that their worth isn't defined by other's words or actions. They can start by practising self-love at frist then, focusing on strengths such as, doing activities that make them feel happy not sad. Surrounding themselves with peers that uplift each other when they are down. It is also important to speak openly about how their feelings and in which give them time to heal.  </p> 
+                         
+            </div> 
+                        
+
+            <div class="footer">
+                <p> &copy; 2026 Bullying in South Auckland,
+                    By Alai Vaiangina
+                </p>
+                                  
+            </div>
+        
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const searchButton = document.getElementById("searchButton");
+
+    const topics = [
+        {
+            keywords: ["What can bullying do to a student", "bullying mental being",  ],
+            id: "bullying-affects-a-person"
+        },
+        {
+            keywords: ["instuctions"],
+            id: "instuctions-when-bullied"
+        },
+        {
+            keywords: ["support", "help", "trusted adult"],
+            id: "support"
+        }
+    ];
+
+    function searchWebsite() {
+        const query = searchInput.value.trim().toLowerCase();
+
+        if (!query) {
+            alert("Please type a topic first.");
+            return;
+        }
+
+        const match = topics.find(topic =>
+            topic.keywords.some(keyword =>
+                keyword.includes(query) || query.includes(keyword)
+            )
+        );
+
+        if (match) {
+            const section = document.getElementById(match.id);
+
+            if (section) {
+                section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            } else {
+                alert("Section not found. Check your HTML IDs.");
+            }
+        } else {
+            alert("No matching topic. Try bullying, effects, or support.");
+        }
+    }
+
+    searchButton.addEventListener("click", searchWebsite);
+
+    searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            searchWebsite();
+        }
+    });
+});
+</script>
+    
+</div>
+
+</body>
+
+</html>
+       
